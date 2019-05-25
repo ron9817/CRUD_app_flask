@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Details</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                {%for i,k in result.items()%}
+                    <div class="row">
+                        <div class="col">ID</div>
+                        <div class="col">{{i}}</div>
+                    </div>
+                    {%for j in k%}
+                        <div class="row">
+                            <div class="col">
+                                {%if loop.index ==1%}
+                                    Name
+                                {%endif%}
+                                {%if loop.index ==2%}
+                                    Category
+                                {%endif%}
+                                {%if loop.index ==3%}
+                                    Description
+                                {%endif%}
+                            </div>
+                            <div class="col">
+                                {{j}}
+                            </div>
+                        </div>
+                    {%endfor%}
+                {%endfor%}
+                {%if code==0%}
+                    <div class=row>
+                        <div class=col></div>
+                        <div class=col>Some error occured</div>
+                        <div class=col></div>
+                    </div>
+                {%endif%}
+            </div>
+            <div class="col"></div>
+        </div>
+    </body>
+</html>
